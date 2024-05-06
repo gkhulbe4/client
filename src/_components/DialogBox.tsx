@@ -8,6 +8,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { BACKEND_URL } from "@/constants";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Toaster, toast } from "sonner";
@@ -25,7 +26,7 @@ export function DialogBox({courseId , price , status}:Props) {
   async function purchaseCourse() {
     try {
       const res = await axios.post(
-        "http://localhost:3000/course/purchase",
+        BACKEND_URL+"/course/purchase",
         {
           userId: userId,
           courseId: courseId

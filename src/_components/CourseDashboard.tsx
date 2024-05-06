@@ -8,6 +8,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { BACKEND_URL } from "@/constants";
 
 function CourseDashboard() {
   let { courseId } = useParams();
@@ -16,7 +17,7 @@ function CourseDashboard() {
     queryKey: ["course"],
     queryFn: async () => {
       const res = await axios.get(
-        `http://localhost:3000/course/details/${courseId}`
+        BACKEND_URL + `/course/details/${courseId}`
       );
       console.log(res.data);
       return res.data;

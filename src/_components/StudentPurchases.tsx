@@ -2,6 +2,7 @@ import axios from "axios";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { course } from "models/course";
 import { useNavigate } from "react-router-dom";
+import { BACKEND_URL } from "@/constants";
 
 type CourseData = {
     id: string,
@@ -21,7 +22,7 @@ function StudentPurchases() {
     queryKey: ["studentPurchases"],
     queryFn: async () => {
       const res = await axios.get(
-        `http://localhost:3000/student/purchases/${userId}`
+        BACKEND_URL+`/student/purchases/${userId}`
       );
       console.log(res.data.studentPurchases);
       return res.data.studentPurchases;
@@ -30,7 +31,7 @@ function StudentPurchases() {
 
   async function changeIsCompleted(courseId: string) {
     const res = await axios.put(
-      "http://localhost:3000/student/purchases/update",
+      BACKEND_URL+"/student/purchases/update",
       {
         courseId: courseId,
         userId: userId,

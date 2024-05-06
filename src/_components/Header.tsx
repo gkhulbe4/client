@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import useCourseStore from "../../utils/courseStore";
+import { BACKEND_URL } from "@/constants";
 
 function Header() {
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ function Header() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/student/me", {
+      .get(BACKEND_URL+"/student/me", {
         headers: {
           Authorization: localStorage.getItem("token"),
         },

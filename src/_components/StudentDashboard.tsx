@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import StudentPurchases from "./StudentPurchases";
+import { BACKEND_URL } from "@/constants";
 
 function StudentDashboard() {
   const userId = localStorage.getItem("id");
@@ -9,7 +10,7 @@ function StudentDashboard() {
     queryKey: ["student"],
     queryFn: async () => {
       const res = await axios.get(
-        `http://localhost:3000/student/details/${userId}`
+        BACKEND_URL+`/student/details/${userId}`
       );
       return res.data.student;
     },

@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 import { course } from "../../models/course";
 import useCourseStore from "../../utils/courseStore";
+import { BACKEND_URL } from "@/constants";
 
 function CourseList() {
   const { auth } = useCourseStore((state) => ({
@@ -15,7 +16,7 @@ function CourseList() {
   const { data, isLoading, error } = useQuery({
     queryKey: ["courses"],
     queryFn: async () => {
-      const res = await axios.get("http://localhost:3000/course/all");
+      const res = await axios.get(BACKEND_URL + "/course/all");
       console.log(res.data.courses);
       return res.data.courses;
     },

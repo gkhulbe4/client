@@ -7,9 +7,10 @@ import Signin from "./_components/Signin";
 import Signup from "./_components/Signup";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BACKEND_URL } from "./constants";
 
 function App() {
-
+console.log("BACKEND_URL",BACKEND_URL);
   return (
     <>
     <Router>

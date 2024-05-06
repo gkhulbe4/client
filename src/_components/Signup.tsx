@@ -16,6 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { signupSchema } from '../../schema/index';
 import useCourseStore from '../../utils/courseStore';
+import { BACKEND_URL } from "@/constants";
 
 
 type signup = z.infer<typeof signupSchema>;
@@ -52,7 +53,7 @@ function Signup() {
     }
     try {
       const res = await axios.post(
-        "http://localhost:3000/student/signup",
+        BACKEND_URL+"/student/signup",
         {
           name: name,
           email: email,

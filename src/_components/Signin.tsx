@@ -16,6 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { signinSchema } from "../../schema/index";
 import useCourseStore from "../../utils/courseStore";
+import { BACKEND_URL } from "@/constants";
 
 type signin = z.infer<typeof signinSchema>;
 function Signin() {
@@ -39,7 +40,7 @@ function Signin() {
     const password = data.password;
     try {
       const res = await axios.post(
-        "http://localhost:3000/student/signin",
+        BACKEND_URL+"/student/signin",
         {
           email: email,
           password: password,
