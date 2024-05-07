@@ -1,30 +1,30 @@
-# React + TypeScript + Vite
+# alemeno_assignment (Please read this before)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+*) Deployed project link : https://6639281a972737000874449d--subtle-druid-0c3339.netlify.app/
 
-Currently, two official plugins are available:
+*)Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The application utilizes a modular architecture with separate client and server folders.
+*)Installation
+Execute "npm install" to install project dependencies
 
-## Expanding the ESLint configuration
+*)Running the Application
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Start the development server in both folders by running "npm run dev".
+*)Features
 
-- Configure the top-level `parserOptions` property like this:
+Database: Leverages PostgreSQL as the primary database with Prisma ORM for efficient data interaction.
+Client-Side Validation: Utilizes libraries like ZOD and React Hook Forms to enforce data integrity and improve user experience.
+React Query: Used React Query to implement infinite scrolling of posts and for fetching the user data.
+State Management: Used Zustand for managing the global states
+Dynamic Rendering: Employs conditional rendering to display content based on user interaction , application state and user authentication.
+User Management: Enables retrieving, updating, and resetting user data (e.g., password reset).
+Type Safety: Enhances code reliability and maintainability through the use of TypeScript.
+User Experience: Custom toast notifications provide visual feedback to users for a more engaging experience.
+Authentication: Implements JSON Web Tokens (JWT) for secure user authentication.
+Middleware: Server-side middleware is incorporated for added functionality.
+Password Visibility: Added show/hide button to toggle the visibility of the password.
+Responsive Design: Ensures optimal user experience across various screen sizes.
+*)Disclaimer
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+While design is not my core strength , but I surely possesses the ability to replicate provided designs.
